@@ -1,0 +1,34 @@
+export type AuditEventType =
+  | 'MISSION_CREATED'
+  | 'MISSION_STARTED'
+  | 'PREFLIGHT_PASSED'
+  | 'PREFLIGHT_FAILED'
+  | 'TAKEOFF_REQUESTED'
+  | 'TAKEOFF_COMPLETED'
+  | 'MOVEMENT_REQUESTED'
+  | 'MOVEMENT_VALIDATED'
+  | 'MOVEMENT_REJECTED'
+  | 'WAYPOINT_REACHED'
+  | 'PERSON_DETECTED'
+  | 'VEHICLE_DETECTED'
+  | 'INCIDENT_CREATED'
+  | 'RTH_REQUESTED'
+  | 'LANDING_REQUESTED'
+  | 'LANDED'
+  | 'MISSION_COMPLETED'
+  | 'MISSION_PAUSED'
+  | 'MISSION_RESUMED'
+  | 'MISSION_ABORTED'
+  | 'MANUAL_OVERRIDE'
+  | 'GEOFENCE_WARNING'
+  | 'BATTERY_LOW'
+  | 'ALARM_RECEIVED';
+
+export interface AuditLog {
+  id: string;
+  timestamp: number;
+  actor: 'SYSTEM' | 'OPERATOR' | 'SAFETY_LAYER' | 'VISION_ENGINE' | 'ALARM_WEBHOOK';
+  event: AuditEventType;
+  missionId?: string;
+  metadata?: Record<string, unknown>;
+}

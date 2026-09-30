@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom dark tactical styles */
+body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Leaflet dark theme tweaks */
+.leaflet-container {
+  background-color: #090d16 !important;
+  font-family: inherit;
+}
+.leaflet-bar a {
+  background-color: #0f172a !important;
+  color: #94a3b8 !important;
+  border-color: #334155 !important;
+}
+.leaflet-bar a:hover {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}

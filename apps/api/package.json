@@ -1,0 +1,30 @@
+{
+  "name": "@patrol/api",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@patrol/shared": "*",
+    "@patrol/drone-core": "*",
+    "@patrol/safety": "*",
+    "@patrol/mission-engine": "*",
+    "@patrol/vision": "*",
+    "@patrol/notifications": "*",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/multer": "^1.4.12",
+    "@types/ws": "^8.5.14",
+    "tsx": "^4.19.2"
+  }
+}

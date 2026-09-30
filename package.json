@@ -1,0 +1,25 @@
+{
+  "name": "drone-property-patrol-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Autonomous Property-Monitoring Drone Platform",
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=@patrol/shared && npm run build --workspace=@patrol/drone-core && npm run build --workspace=@patrol/safety && npm run build --workspace=@patrol/mission-engine && npm run build --workspace=@patrol/vision && npm run build --workspace=@patrol/notifications && npm run build --workspace=@patrol/api && npm run build --workspace=@patrol/web",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev:api": "npm run dev --workspace=apps/api",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "start": "npm run start --workspace=apps/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.7"
+  }
+}
